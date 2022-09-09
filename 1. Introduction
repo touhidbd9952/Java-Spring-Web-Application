@@ -1,2 +1,41 @@
-//////Create a Project///////////////////////////////////////////////
-1. go to "https://start.spring.io/"
+///////Spring MVC Structure////////////////////////////////////////////////
+
+
+request      
+------------> Dispatcher Servlet(web.xml) ----------> Handler Mapping (spring-servlet.xml)
+               |      |              /\|              1. Database connection
+               |      |              | |              2. Data Access Object Connection (dao)
+               |      |   ModelAndView |              3. ViewResolver connection
+               |      |              | V
+               |      |            Controller
+               |      |            1. Route
+               |      |            2. Function
+               V      V            
+            View <---ViewResolver
+                
+                                              
+Dispatcher Servlet (web.xml)
+---------------------------------
+1. it receive all incoming request
+2. it call spring-servlet to check database connection, dao connection, viewResolver connection
+3. it call controller to execute purticular requested function to give some output
+4. it call ViewResolver to make view from controller output
+
+ViewResolver
+-------------------------------
+1. it is a class
+2. it takes "view name"
+3. it add prefix "/WEB-INF/pages/" with "view name"
+4. it add suffix ".jsp" with "view name"
+
+    "/WEB-INF/pages/" + "view name" + ".jsp"  ---->  /WEB-INF/pages/home.jsp
+
+5. it send "ViewResolve" output to browser to show 
+
+ViewResolver type:
+  1. InternalResourceViewResolver
+  2. UrlBasedViewResolver
+  3. xmLviewResolver
+  4. ResourceBundleViewResolver
+  5. VeocityViewResolver
+  
