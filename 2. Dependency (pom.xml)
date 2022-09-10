@@ -1,5 +1,15 @@
-Step: 1  Dependency (pom.xml)　　Dispatcher
+To build Java Spring Web application in MVC, we need below jar(library) files
+
+1. Spring Core jar files
+2. Spring Web jar files
+3. JSP + JSTL jar files
+we can download from https://static.javatpoint.com/src/sp/springjars.zip
+
+If we using Maven, we don't need to add jar files. Now, we need to add maven dependency to the pom.xml file.
+
+///////Dependency (pom.xml)　　Dispatcher//////////////////////////
 Provide information and configuration about project
+
 
 <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->  
 <dependency>  
